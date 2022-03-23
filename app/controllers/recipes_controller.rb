@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.all.order(created_at: :desc)
   end
 
   def show
@@ -12,9 +12,10 @@ class RecipesController < ApplicationController
   end
 
   def create 
-    @recipe = Recipe.new(recipe_params)
+    @recipe = Recipe.create!(recipe_params)
+
     if @recipe.save
-      redirect_to root_url
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -43,6 +44,6 @@ class RecipesController < ApplicationController
 
   private
     def recipe_params
-      params.require(:recipe).permit(:food_name, :time, :author, :description)
+      params.require(:recipe).permit(:food_name, :time, :author, :description, :foodpic)
     end
 end

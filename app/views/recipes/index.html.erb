@@ -11,14 +11,14 @@
           <div class="flex justify-between items-center">
             <h1 class="font-bold uppercase p-4 border-b border-gray-100 flex">
               <%= render "recipes/svg/logosvg" %>
-              <a href="#" class="hover:text-gray-800 ml-1">Food App</a>
+              <a href="/" class="hover:text-gray-800 ml-1">Food App</a>
             </h1>
             <div class="px-4 cursor-pointer md:hidden" id="burger"><%= render "recipes/svg/burgersvg" %>
             </div>
           </div>
           <ul class="text-md mt-6 hidden md:block" id="menu">
-            <li class="text-gray-700">
-              <a href="#" class="nav border-r-4 border-red-400">
+            <li>
+              <a href="/" class="nav border-r-4 border-red-400">
                 <span class="mr-0.5">Home</span><%= render "recipes/svg/homesvg" %>
               </a>
             </li>
@@ -36,7 +36,7 @@
         </nav>
       </div>
 
-      <main class="px-16 py-6 bg-gray-100 md:col-span-5">
+      <main class="px-16 py-8 bg-gray-100 md:col-span-5">
         <div class="flex justify-center md:justify-end">
           <a
             href="#"
@@ -63,36 +63,13 @@
           <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10 mr-12">
             <!-- Cards go here-->
             <%= render "card" %>
-            <div class="card">
-              <img
-                src="https://raw.githubusercontent.com/kmbtjs/FoodApp/main/public/img/curry.jpg"
-                alt="Curry"
-                class="w-full h-32 sm:h-48 object-cover"
-              />
-              <div class="m-3">
-                <span class="font-bold">Tofu Curry</span>
-                <span class="block text-gray-600 text-sm">Recipe by Mario</span>
-              </div>
-              <div class="badge"><%= render "recipes/svg/badgesvg"%><span class="ml-1">25 mins</span>
-              </div>
-            </div>
-            <div class="card">
-              <img
-                src="https://raw.githubusercontent.com/kmbtjs/FoodApp/main/public/img/stew.jpg"
-                alt="Stew"
-                class="w-full h-32 sm:h-48 object-cover"
-              />
-              <div class="m-3">
-                <span class="font-bold">5 Bean Chilli Stew</span>
-                <span class="block text-gray-600 text-sm">Recipe by Mario</span>
-              </div>
-              <div class="badge">
-                <%= render "recipes/svg/badgesvg"%>
-              <span class="ml-1">25 mins</span>
-              </div>
-            </div>
           </div>
           <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">
+          <div class="flex justify-center mt-2">
+            <a href="/recipes/new" class="flex button items-center py-1.5 px-3 text-xs text-gray-500 border-gray-500 md:border-2 hover:bg-gray-600 hover:text-white ml-2 transition ease-out duration-500">
+              <span class="mr-0.5 ">Add New Recipe</span><%= render "recipes/svg/plusvg" %>
+            </a>
+          </div>
             Most Popular
           </h4>
           <div class="mt-8">
